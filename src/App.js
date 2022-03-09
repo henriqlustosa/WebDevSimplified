@@ -3,9 +3,13 @@
 
 function App() {
   return (
-  <h1>
-    "Hello World"
- </h1>)
+ <div>
+	<button>-</button>
+	<span>0</span>
+	<button>+</button>
+ 
+ </div>
+ )
 }
 
 export default App;
