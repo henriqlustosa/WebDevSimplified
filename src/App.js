@@ -1,14 +1,11 @@
-
+import React from 'react';
+import Counter from './Counter';
 
 
 function App() {
+ console.log("Render App")
   return (
- <div>
-	<button>-</button>
-	<span>0</span>
-	<button>+</button>
- 
- </div>
+	<Counter initialCount={0}/>
  )
 }
 
