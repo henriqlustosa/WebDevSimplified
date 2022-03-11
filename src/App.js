@@ -1,23 +1,38 @@
-import React, { useState } from 'react';
-import Counter from './Counter';
-import CounterHooks from './CounterHooks';
+import React from 'react';
+import PacienteList from './PacienteList'
+
 
 export const ThemeContext = React.createContext()
 
 function App() {
- console.log("Render App")
-  const [theme, setTheme] = useState('red')
+ 
   return (
-  <ThemeContext.Provider value = {{ backgroundColor : theme}}>
-		Counter
-		<Counter initialCount={0}/>
-		Counter hooks
-		<CounterHooks initialCount={0}/>
-		<button onClick={() => setTheme(prevTheme => {
-		return prevTheme === 'red' ? 'blue' : 'red'
-		})}> Toggle Theme </button>
-	</ThemeContext.Provider >
- )
+	    <PacienteList pacientes={samplePacientes} />
+  ) 
+ 
 }
+
+const samplePacientes = [
+  {
+    id: 1,
+    nome: 'Henrique Lustosa',
+    prontuario: 11209913,
+    vinculo: 'FUNCIONARIO',
+    orgaoPrefeitura: "SMS",
+	rfMatricula: "H013026",
+	nomeMae: "Sonia Maria Dias Lustosa",
+	usuarioId:1
+  },
+  {
+	id: 2,
+    nome: 'Jose Vieira Dias Junior',
+    prontuario: 11209914,
+    vinculo: 'FUNCIONARIO',
+    orgaoPrefeitura: "SMS",
+	rfMatricula: "H013028",
+	nomeMae: "Maria da Conceicao",
+	usuarioId:1
+  }
+]
 
 export default App;
