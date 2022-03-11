@@ -3,6 +3,7 @@ import Paciente from './Paciente'
 function PacienteList({pacientes}){
 
 return(
+    <>
      <div>
       {pacientes.map(paciente => {
         return (
@@ -13,7 +14,8 @@ return(
         )
       })}
     </div>
-
+    <button>Add Recipe</button>
+    </>
 )
 }
 

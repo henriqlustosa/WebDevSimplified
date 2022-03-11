@@ -21,7 +21,21 @@ const samplePacientes = [
     orgaoPrefeitura: "SMS",
 	rfMatricula: "H013026",
 	nomeMae: "Sonia Maria Dias Lustosa",
-	usuarioId:1
+	usuarioId:1,
+	exames: [
+      {
+        id: 1,
+        dataResultado: '2022-03-11',
+        microorganismo: 'A. BAUMANNII - MDR',
+		material:'CATETER'
+      },
+      {
+		id: 2,
+        dataResultado: '2022-03-10',
+        microorganismo: 'E. FAECALIS VRE',
+		material:'CATETER DUPLO J BILATERALCATETER'
+      }
+    ]
   },
   {
 	id: 2,
@@ -31,7 +45,22 @@ const samplePacientes = [
     orgaoPrefeitura: "SMS",
 	rfMatricula: "H013028",
 	nomeMae: "Maria da Conceicao",
-	usuarioId:1
+	usuarioId:1,
+	exames: [
+		{
+		  id: 1,
+		  dataResultado: "2022-03-13",
+		  microorganismo: 'E. FAECIUM VRE',
+		  material:'CATETER'
+		},
+		{
+		  id: 2,
+		  dataResultado: '2022-03-09',
+		  microorganismo: 'E. FAECALIS VRE',
+		  material:'CATETER VENOSO '
+		}
+	  ]
+
   }
 ]
 

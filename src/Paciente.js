@@ -1,5 +1,5 @@
 import React from 'react';
-
+import ExameList from './ExameList'
 
 function Paciente(props){
     const {
@@ -9,7 +9,8 @@ function Paciente(props){
         orgaoPrefeitura,
         rfMatricula,
         nomeMae,
-        usuarioId
+        usuarioId,
+        exames 
 
     } = props
 
@@ -32,7 +33,7 @@ function Paciente(props){
                 </div>
                 <div>
                     <span>Órgão da Prefeitura: </span>
-                    <div>{orgaoPrefeitura}</div>
+                    <span>{orgaoPrefeitura}</span>
                 </div>
                 
                 <div>
@@ -45,9 +46,17 @@ function Paciente(props){
                 </div>
                 <div>
                     <span>Usuario Id: </span>
-                    <div>{usuarioId}</div>
+                    <span>{usuarioId}</span>
                 </div>
-            </div>
+                 <div>
+                    <span>Exames:</span>
+                <div>
+                    <ExameList exames={exames} />
+                 </div>
+            </div> 
+
+                
+        </div>
     
         )
 }
