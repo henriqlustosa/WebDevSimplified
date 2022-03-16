@@ -1,0 +1,41 @@
+.paciente {
+    padding: 20px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid black;
+  }
+  
+  .paciente:last-child {
+    border-bottom: none;
+    padding-bottom: 10px;
+  }
+  
+  .paciente__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+  }
+  
+  .paciente__title {
+    margin: 0;
+    font-size: 1.75rem;
+  }
+  
+  .paciente__row {
+    margin-top: 10px;
+  }
+  
+  .paciente__label {
+    margin-right: 5px;
+  }
+  
+  .paciente__value {
+    font-weight: 300;
+  }
+  
+  .paciente__value--indented {
+    margin-top: 10px;
+    margin-left: 20px;
+  }
+  
+ 

@@ -6,8 +6,8 @@ function ExameList({ exames}) {
     return <Exame key={exame.id} {...exame} />
   })
   return (
-    <div>
-      {exameElements}
+    <div className="exame-grid">
+     {exameElements}
     </div>
   )
 }

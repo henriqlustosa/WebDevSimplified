@@ -1,14 +1,64 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PacienteList from './PacienteList'
-
-
+import '../css/app.css'
+import { v4 as uuidv4 } from 'uuid'
 export const ThemeContext = React.createContext()
 
 function App() {
- 
+	
+	
+   const [pacientes, setPacientes] = useState(samplePacientes)
+	
+   function handlePacienteAdd(){
+
+	const newPaciente = {
+		id: uuidv4(),
+		nome: 'New',
+		prontuario: 1,
+		vinculo: 'NEW_FUNCIONARIO',
+		orgaoPrefeitura: "NEW_SMS",
+		rfMatricula: "NEW1",
+		nomeMae: "NEW_NOME_MAE",
+		usuarioId:uuidv4(),
+		exames: [
+		  {
+			id: uuidv4(),
+			dataResultado: '2011-01-01',
+			microorganismo: 'NEW_A. BAUMANNII - MDR',
+			material:'NEW_CATETER'
+		  },
+		  {
+			id: uuidv4(),
+			dataResultado: '2011-01-11',
+			microorganismo: 'NEW_E. FAECALIS VRE',
+			material:'NEW_CATETER DUPLO J BILATERALCATETER'
+		  }
+		]
+
+
+	}
+
+	setPacientes([...pacientes, newPaciente])
+   }
+	
+
+   function handlePacienteDelete(id) {
+    	setPacientes(pacientes.filter(paciente => paciente.id !== id))
+    }
+
   return (
-	    <PacienteList pacientes={samplePacientes} />
+
+	    <PacienteList 
+		 
+			pacientes={pacientes}
+			handlePacienteAdd={handlePacienteAdd}
+            handlePacienteDelete={handlePacienteDelete}
+		
+		
+		/>
   ) 
+
+
  
 }
 
@@ -49,7 +99,7 @@ const samplePacientes = [
 	exames: [
 		{
 		  id: 1,
-		  dataResultado: "2022-03-13",
+		  dataResultado: '2022-03-13',
 		  microorganismo: 'E. FAECIUM VRE',
 		  material:'CATETER'
 		},
