@@ -2,10 +2,16 @@ import React, { useState, useEffect } from "react";
 import PacienteList from "./PacienteList";
 import "../css/app.css";
 import { v4 as uuidv4 } from "uuid";
+import PacienteEdit from './PacienteEdit'
+
 export const PacienteContext = React.createContext();
+
 const LOCAL_STORAGE_KEY = 'pacienteWithReact.pacientes'
+
 function App() {
-  const [pacientes, setPacientes] = useState(samplePacientes);
+  const [selectedPacienteId, setSelectedPacienteId] = useState()
+  const [pacientes, setPacientes] = useState(samplePacientes)
+  const selectedPaciente = pacientes.find(paciente => paciente.id === selectedPacienteId)
   useEffect(() => {
   
       const pacienteJSON = localStorage.getItem(LOCAL_STORAGE_KEY)
@@ -20,7 +26,15 @@ function App() {
   const pacienteContextValue = {
 	handlePacienteAdd,
 	handlePacienteDelete,
+  handlePacienteSelect,
+  handlePacienteChange
   };
+
+  function handlePacienteSelect(id) {
+    setSelectedPacienteId(id)
+  }
+
+
   function handlePacienteAdd() {
   	const newPaciente = {
       id: uuidv4(),
@@ -49,6 +63,12 @@ function App() {
 
     setPacientes([...pacientes, newPaciente]);
   }
+  function handlePacienteChange(id, paciente) {
+    const newPacientes = [...pacientes]
+    const index = newPacientes.findIndex(r => r.id === id)
+    newPacientes[index] = paciente
+    setPacientes(newPacientes)
+  }
 
   function handlePacienteDelete(id) {
     setPacientes(pacientes.filter((paciente) => paciente.id !== id));
@@ -57,6 +77,8 @@ function App() {
   return (
     <PacienteContext.Provider value={pacienteContextValue}>
       <PacienteList pacientes={pacientes}/>
+        {selectedPaciente && <PacienteEdit paciente={selectedPaciente} />}
+      
     </PacienteContext.Provider>
   );
 }

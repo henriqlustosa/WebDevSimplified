@@ -16,13 +16,16 @@ function Paciente(props) {
     exames,
   
   } = props;
- const {handlePacienteDelete} = useContext(PacienteContext)
+ const {handlePacienteDelete, handlePacienteSelect} = useContext(PacienteContext)
   return (
     <div className="paciente">
       <div className="paciente__header">
         <h3 className="paciente__title">{nome}</h3>
         <div>
-          <button className="btn btn--primary mr-1">Edit</button>
+          <button 
+          className="btn btn--primary mr-1"
+           onClick={() => handlePacienteSelect(id)}
+          >Edit</button>
           <button
            className="btn btn--danger"
            onClick={() => handlePacienteDelete(id)}

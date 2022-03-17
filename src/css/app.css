@@ -4,6 +4,7 @@
 @import 'paciente-list.css';
 @import 'paciente.css';
 @import 'exame-list.css';
+@import 'paciente-edit.css';
 
 *, *::before, *::after {
   font-family: Gotham Rounded, sans-serif;
