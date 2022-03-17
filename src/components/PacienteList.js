@@ -1,22 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Paciente from './Paciente'
-function PacienteList(props){
-  const {
-    pacientes,
-    handlePacienteAdd,
-    handlePacienteDelete
-  } = props
-return(
+import { PacienteContext} from './App'
+
+
+function PacienteList({pacientes}){
+  const {handlePacienteAdd}= useContext(PacienteContext)
+
+  return(
   
      <div className='paciente-list'>
        <div>
       {pacientes.map(paciente => {
         return (
-          <Paciente
-            key={paciente.id}
-            handlePacienteDelete={handlePacienteDelete}
-            {...paciente}
-          />
+          <Paciente key={paciente.id}{...paciente}/>
         )
       })}
     </div>

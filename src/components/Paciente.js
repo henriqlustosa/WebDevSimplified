@@ -1,5 +1,7 @@
-import React from "react";
+import React, {useContext} from "react";
 import ExameList from "./ExameList";
+import {PacienteContext}  from './App'
+
 
 function Paciente(props) {
   const {
@@ -12,9 +14,9 @@ function Paciente(props) {
     nomeMae,
     usuarioId,
     exames,
-    handlePacienteDelete
+  
   } = props;
-
+ const {handlePacienteDelete} = useContext(PacienteContext)
   return (
     <div className="paciente">
       <div className="paciente__header">
