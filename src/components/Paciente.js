@@ -12,7 +12,6 @@ function Paciente(props) {
     orgaoPrefeitura,
     rfMatricula,
     nomeMae,
-    usuarioId,
     exames,
   
   } = props;
@@ -53,10 +52,7 @@ function Paciente(props) {
         <span className="paciente__label">Nome da mãe: </span>
         <span className="paciente__value">{nomeMae}</span>
       </div>
-      <div className="paciente__row"> 
-        <span className="paciente__label">Usuario Id: </span>
-        <span className="paciente__value">{usuarioId}</span>
-      </div>
+     
       <div className="paciente__row">
         <span className="paciente__label">Exames:</span>
         <div className="paciente__value paciente__value--idented">

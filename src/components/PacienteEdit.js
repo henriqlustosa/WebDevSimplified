@@ -68,7 +68,7 @@ function PacienteEdit({paciente}) {
           Vinculo
         </label>
         <input
-          type="number"
+          type="text"
           name="vinculo"
           id="vinculo"
           value={paciente.vinculo}
@@ -113,16 +113,7 @@ function PacienteEdit({paciente}) {
           className="paciente-edit__input"
         />
 
-        <label htmlFor="usuarioId" className="paciente-edit__label">
-          Usuario ID
-        </label>
-        <input
-          name="usuarioId"
-          id="usuarioId"
-          value={paciente.usuarioId}
-          onInput={e => handleChange({ usuarioId: e.target.value })}
-          className="paciente-edit__input"
-        ></input>
+        
       </div>
       <br />
       <label className="paciente-edit__label">Exames</label>
