@@ -4,7 +4,8 @@ function ExameEdit(props) {
 
      const {
     exame,
-    handleExameChange
+    handleExameChange,
+    handleExameDelete
   } = props
 
   function handleChange(changes) {
@@ -31,7 +32,10 @@ function ExameEdit(props) {
         value={exame.material}
         onInput={(e) => handleChange({ material: e.target.value })}
       />
-      <button className="btn btn--danger">&times;</button>
+      <button 
+      className="btn btn--danger"
+      onClick={() => handleExameDelete(exame.id)}
+      >&times;</button>
     </>
   )
 }

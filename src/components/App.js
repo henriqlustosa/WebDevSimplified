@@ -38,26 +38,21 @@ function App() {
   function handlePacienteAdd() {
   	const newPaciente = {
       id: uuidv4(),
-      nome: "New",
-      prontuario: 1,
-      vinculo: "NEW_FUNCIONARIO",
-      orgaoPrefeitura: "NEW_SMS",
-      rfMatricula: "NEW1",
-      nomeMae: "NEW_NOME_MAE",
+      nome: '',
+      prontuario: '',
+      vinculo: '',
+      orgaoPrefeitura: '',
+      rfMatricula: '',
+      nomeMae: '',
       usuarioId: uuidv4(),
       exames: [
         {
           id: uuidv4(),
-          dataResultado: "2011-01-01",
-          microorganismo: "NEW_A. BAUMANNII - MDR",
-          material: "NEW_CATETER",
+          dataResultado: '',
+          microorganismo: '',
+          material: '',
         },
-        {
-          id: uuidv4(),
-          dataResultado: "2011-01-11",
-          microorganismo: "NEW_E. FAECALIS VRE",
-          material: "NEW_CATETER DUPLO J BILATERALCATETER",
-        },
+     
       ],
     };
 
@@ -71,6 +66,10 @@ function App() {
   }
 
   function handlePacienteDelete(id) {
+
+     if (selectedPacienteId != null && selectedPacienteId === id) {
+      setSelectedPacienteId(undefined)
+    }
     setPacientes(pacientes.filter((paciente) => paciente.id !== id));
   }
 
